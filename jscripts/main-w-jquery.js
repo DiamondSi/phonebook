@@ -1,24 +1,23 @@
 $(document).ready(function () {
-    var addTaskButton = document.getElementById("add-task-button");
-    var taskName = document.getElementById("task-name-input");
-    var taskList = document.getElementById("task-list");
+    var addContactButton = $("#add-contact-button");
+    var taskName = $("#task-name-input");
+    var taskList = $("#task-list");
 
-    addTaskButton.addEventListener("click", function () {
-        var textValue = taskName.value;
-        var taskListItem = document.createElement("li");
+    addContactButton.click(function () {
+        var textValue = taskName.val();
+        var taskListItem = $("<li>");
 
-        var taskDelButton = document.createElement("button");
-        taskDelButton.type = "reset";
-        taskDelButton.textContent = "Удалить";
-        taskDelButton.className = "del-task-button";
+        var taskDelButton = $("<button>")
+            // .css({"margin-left": "30px"})
+            .text("Удалить")
+            .addClass("del-task-button")
+            .click(function () {
+                taskListItem.remove();
+            });
 
-        taskDelButton.addEventListener("click", function () {
-            taskListItem.remove();
-        });
-
-        taskListItem.innerText = textValue;
-        taskListItem.appendChild(taskDelButton);
-        taskList.appendChild(taskListItem);
-        taskName.value = "";
+        taskListItem.text(textValue);
+        taskListItem.append(taskDelButton);
+        taskList.append(taskListItem);
+        taskName.val("");
     });
-}
+});

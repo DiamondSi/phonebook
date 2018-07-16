@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/DiamondSi/phonebook#readme",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "bootstrap": "^4.1.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "vue": "^2.5.16"
   }
 }

@@ -10,21 +10,23 @@
 <body>
 <div class="container">
     <h1>Контакты</h1>
-    <ul id="task-list"></ul>
-    <div class="container">
-        <form>
-            <p><label for="last-name-input">Фамилия: </label><input id="last-name-input" type="text"/></p>
-            <p><label for="first-name-input">Имя: </label><input id="first-name-input" type="text"/></p>
-            <p><label for="phone-input">Телефон: </label><input id="phone-input" type="text"/></p>
-            <p>
-                <button id="add-contact-button" type="button">Добавить</button>
-            </p>
-        </form>
-        <div class="container">
-            <script src="./node_modules/jquery/dist/jquery.js"></script>
-            <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="jscripts/main-w-jquery.js"></script>
-        </div>
+    <ul id="contact-list"></ul>
+</div>
+<div class="container">
+    <form>
+        <p><label for="last-name-input">Фамилия: </label><input id="last-name-input" type="text"
+                                                                autocomplete="family-name"/></p>
+        <p><label for="first-name-input">Имя: </label><input id="first-name-input" type="text"
+                                                             autocomplete="given-name"/></p>
+        <p><label for="phone-input">Телефон: </label><input id="phone-input" type="text" autocomplete="tel-national"/></p>
+        <p>
+            <button id="add-contact-button" type="button">Добавить</button>
+        </p>
+    </form>
+</div>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="jscripts/main-w-jquery.js"></script>
 </body>
 
 </html>

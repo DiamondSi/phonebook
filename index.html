@@ -10,36 +10,39 @@
 <body>
 <div class="container">
     <h1>Контакты</h1>
-</div>
-    <form>
-        <p><label for="last-name-input">Фамилия: </label><input id="last-name-input" type="text"
-                                                                autocomplete="family-name"/></p>
-        <p><label for="first-name-input">Имя: </label><input id="first-name-input" type="text"
-                                                             autocomplete="given-name"/></p>
-        <p><label for="phone-input">Телефон: </label><input id="phone-input" type="text" autocomplete="tel-national"/></p>
-        <p>
-            <button id="add-contact-button" type="button">Добавить</button>
-        </p>
+    <form role="form">
+        <div class="form-group">
+            <label for="last-name-input">Фамилия: </label>
+            <input id="last-name-input" type="text" class="form-control" autocomplete="family-name"
+                   placeholder="Фамилия"/>
+            <label for="first-name-input">Имя: </label>
+            <input id="first-name-input" type="text" class="form-control" autocomplete="given-name" placeholder="Имя"/>
+            <label for="phone-input">Телефон: </label>
+            <input id="phone-input" type="tel" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value=""
+                   pattern="(\+[\d\ \(\)\-]{16})"
+                   autocomplete="tel-national"/>
+            <span class="btn btn-success plus">Добавить</span>
+        </div>
     </form>
-<table class="table information_json">
-    <tr>
-        <th>#</th>
-        <th>Фамилия</th>
-        <th>Имя</th>
-        <th>Телефон</th>
-        <th></th>
-    </tr>
-    <tr class="information_json_plus">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="btn btn-success plus pull-right">+</span></td>
-    </tr>
-</table>
-<script src="./node_modules/jquery/dist/jquery.js"></script>
-<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="jscripts/main-w-jquery.js"></script>
+    <table class="table contact_json">
+        <tr>
+            <th>#</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th></th>
+        </tr>
+        <tr class="contact_json_plus">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/bootstrap-formhelpers/dist/js/bootstrap-formhelpers.min.js"></script>
+    <script src="jscripts/main-w-jquery.js"></script>
+</div>
 </body>
-
 </html>

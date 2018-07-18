@@ -29,16 +29,16 @@ $(document).ready(function () {
 // формируем новые поля\
     var number = 1;
     jQuery('.plus').click(function () {
-        jQuery('.information_json_plus').before(
+        jQuery('.contact_json_plus').before(
             '<tr>' +
-            '<td><input type="text" class="form-control" id="information_json_number[]" placeholder=' + number + '></td>' +
-            '<td><input type="text" class="form-control" id="information_json_last_name[]" placeholder="Фамилия"></td>' +
-            '<td><input type="text" class="form-control" id="information_json_first_name[]" placeholder="Имя"></td>' +
-            '<td><input type="text" class="form-control" id="information_json_phone[]" placeholder="Телефон"></td>' +
+            '<td><input type="text" class="form-control" id="contact_json_number[]" placeholder=' + number + '></td>' +
+            '<td><input type="text" class="form-control" id="contact_json_last_name[]" placeholder="Фамилия"></td>' +
+            '<td><input type="text" class="form-control" id="contact_json_first_name[]" placeholder="Имя"></td>' +
+            '<td><input type="tel" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value="" pattern="(\\+[\\d\\ \\(\\)\\-]{16})" id="contact_json_phone[]" placeholder="Телефон"></td>' +
             '<td><span class="btn btn-danger minus pull-right">x</span></td>' +
             '</tr>'
         );
-        number = information_json_number.length;
+        number = contact_json_number.length;
     });
 // on - так как элемент динамически создан и обычный обработчик с ним не работает
     jQuery(document).on('click', '.minus', function () {

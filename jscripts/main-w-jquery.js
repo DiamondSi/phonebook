@@ -34,11 +34,12 @@ $(document).ready(function () {
             '<td><input type="text" class="form-control" id="contact_json_number[]" placeholder=' + number + '></td>' +
             '<td><input type="text" class="form-control" id="contact_json_last_name[]" placeholder="Фамилия"></td>' +
             '<td><input type="text" class="form-control" id="contact_json_first_name[]" placeholder="Имя"></td>' +
-            '<td><input type="tel" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value="" pattern="(\\+[\\d\\ \\(\\)\\-]{16})" id="contact_json_phone[]" placeholder="Телефон"></td>' +
+            '<td><input type="tel" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd"' +
+            ' pattern="(?:\\+|\\d)[\\d\\-\\(\\) ]{9,}\\d/g" id="contact_json_phone[]" placeholder="Телефон"></td>' +
             '<td><span class="btn btn-danger minus pull-right">x</span></td>' +
             '</tr>'
         );
-        number = contact_json_number.length;
+        number++;
     });
 // on - так как элемент динамически создан и обычный обработчик с ним не работает
     jQuery(document).on('click', '.minus', function () {

@@ -19,7 +19,7 @@
             <input id="first-name-input" type="text" class="form-control" autocomplete="given-name" placeholder="Имя"/>
             <label for="phone-input">Телефон: </label>
             <input id="phone-input" type="tel" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value=""
-                   pattern="(\+[\d\ \(\)\-]{16})"
+                   pattern="(?:\+|\d)[\d\-\(\) ]{9,}\d/g"
                    autocomplete="tel-national"/>
             <span class="btn btn-success plus">Добавить</span>
         </div>
@@ -41,7 +41,7 @@
     </table>
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./node_modules/bootstrap-formhelpers/dist/js/bootstrap-formhelpers.min.js"></script>
+    <script src="./jscripts/bootstrap-formhelpers.min.js"></script>
     <script src="jscripts/main-w-jquery.js"></script>
 </div>
 </body>

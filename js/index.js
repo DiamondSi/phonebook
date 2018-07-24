@@ -1,9 +1,10 @@
 $(document).ready(function () {
     $(document).on('click', '.plus', function () {
-        // получаем поля из формы ввода
-        var lastName = $('#last-name-input').val();
-        var firstName = $('#first-name-input').val();
-        var phone = $('#phone-input').val();
+        // получаем поля из формы ввода. возможные опасные символы конвертируем в мнемоники
+        var lastName = htmlEncode($('#last-name-input').val());
+        var firstName = htmlEncode($('#first-name-input').val());
+        var phone = htmlEncode($('#phone-input').val());
+
         $('form input').each(function () {
             var temp = $(this).val();
             if (temp === "") {
@@ -13,16 +14,6 @@ $(document).ready(function () {
             }
         });
         if (lastName !== "" && firstName !== "" && phone !== "") {
-            // var trow = $('<td><input type="text" class="form-control row-index" value="' + $('.table tr').length + '"/></td>' +
-            //     '<td><input type="text" class="form-control" value=""/></td>' +
-            //     '<td><input type="text" class="form-control" value=""/></td>' +
-            //     '<td><input type="text" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value=""/></td>' +
-            //     '<td><button type="button" class="btn btn-danger minus pull-right">Удалить</button></td>');
-            // trow.find('td:eq(1)').text(lastName);
-            // trow.find('td:eq(2)').text(firstName);
-            // trow.find('td:eq(3)').text(phone);
-            // alert(trow.val());
-            // $('.table tbody').append(trow);
             $('.table tbody').append(
                 '<tr>' +
                 '<td><input type="text" class="form-control row-index" value="' + $('.table tr').length + '"/></td>' +
@@ -44,5 +35,9 @@ $(document).ready(function () {
 
     function resetInput() {
         $(".contact-form").find("input").val("");
+    }
+
+    function htmlEncode(value){
+        return $('<div/>').text(value).html();
     }
 });

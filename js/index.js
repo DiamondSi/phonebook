@@ -13,6 +13,16 @@ $(document).ready(function () {
             }
         });
         if (lastName !== "" && firstName !== "" && phone !== "") {
+            // var trow = $('<td><input type="text" class="form-control row-index" value="' + $('.table tr').length + '"/></td>' +
+            //     '<td><input type="text" class="form-control" value=""/></td>' +
+            //     '<td><input type="text" class="form-control" value=""/></td>' +
+            //     '<td><input type="text" class="form-control bfh-phone" data-format="+7 (ddd) ddd-dddd" value=""/></td>' +
+            //     '<td><button type="button" class="btn btn-danger minus pull-right">Удалить</button></td>');
+            // trow.find('td:eq(1)').text(lastName);
+            // trow.find('td:eq(2)').text(firstName);
+            // trow.find('td:eq(3)').text(phone);
+            // alert(trow.val());
+            // $('.table tbody').append(trow);
             $('.table tbody').append(
                 '<tr>' +
                 '<td><input type="text" class="form-control row-index" value="' + $('.table tr').length + '"/></td>' +
